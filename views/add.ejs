@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Entry Form</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.homebtn{
+  background-color: #e90e5b;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button a{
+        font-size: 12px;
+        color: #f2f2f2;
+        text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Data Entry Form</h1>
+  
+  <form action="/addData" method="post">
+    <label for="imei">IMEI No.:</label>
+    <input type="text" name="imei" required>
+    <br>
+    <label for="simNo">SIM No.:</label>
+    <input type="text" name="simNo" required>
+    <br>
+    <label for="appStatus">App Status:</label>
+    <input type="text" name="appStatus" required>
+    <br>
+    <label for="serverStatus">Server Status:</label>
+    <input type="text" name="serverStatus" required>
+    <br>
+    <button type="submit">Submit</button>
+    <button class="homebtn"><a href="/"> HOME </a></button>
+  </form>
+</body>
+</html>

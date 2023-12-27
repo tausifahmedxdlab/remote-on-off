@@ -1,0 +1,3 @@
+db password = EHn0ugOyNBPm7V6o
+db IP = 223.190.80.221/32
+db url = mongodb+srv://tausifahmedxdlab:<password>@cluster0.gvkwzwe.mongodb.net/?retryWrites=true&w=majority
