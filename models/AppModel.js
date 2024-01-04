@@ -11,11 +11,12 @@ const AppSchema = new mongoose.Schema({
     },
     APPSTATUS:{
         type:String,
-        require:true
     },
     RUNSTATUS:{
         type:String,
-        require:true
+    },
+    RMSDATETIME:{
+        type:String,
     },
     DATE:{
         type:Date,
