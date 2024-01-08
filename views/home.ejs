@@ -60,9 +60,10 @@
       <tr>
         <th>IMEI No.</th>
         <th>SIM No.</th>
-        <th>App Status</th>
-        <th>RUN Status</th>
-        <th>RMS DateTime</th>
+        <th>APP STATUS</th>
+        <th>MOTOR STATUS</th>
+        <th>MOTOR RPM</th>
+        <th>RMS DATE TIME</th>
       </tr>
     </thead>
     <tbody id="data-body">
@@ -87,7 +88,9 @@ function fetchData() {
           <td>${item.SIM}</td>
           <td>${item.APPSTATUS}</td>
           <td>${item.RUNSTATUS}</td>
+          <td>${item.MOTORRPM}</td>
           <td>${item.RMSDATETIME}</td>
+   
         `;
         tableBody.appendChild(row);
       });

@@ -10,13 +10,15 @@ router.post('/addData', async (req, res) => {
   const newData = new AppSchema({
     IMEI: req.body.imei,
     SIM: req.body.simNo,
+    APPSTATUS:"0",
+    RUNSTATUS:"0",
+    MOTORRPM:"0",
+    RMSDATETIME:"2000-00-00 12:00:00"
   });
-
+  console.log(newData);
   try {
     await AppSchema.create(newData)
-    // await newData.save();
-    res.json({ "Success": "true" })
-    console.log("data Added Successfully")
+    res.redirect('/')
   } catch (error) {
     console.error('Error saving data to MongoDB:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -55,7 +57,8 @@ router.get('/app-status/detail', async (req, res) => {
   const dataArray = data.split('$');
   const IMEI_NO  = dataArray[0];
   const R_STATUS = dataArray[1];
-  const RMS_DATE = dataArray[2];
+  const MOTOR_RPM = dataArray[2];
+  const RMS_DATE = dataArray[3];
 
   try {
     const existingData = await AppSchema.findOne({ IMEI: IMEI_NO });
@@ -66,6 +69,7 @@ router.get('/app-status/detail', async (req, res) => {
 
     const C_APP_STATUS = existingData.APPSTATUS;
     existingData.RUNSTATUS = R_STATUS;
+    existingData.MOTORRPM = MOTOR_RPM;
     existingData.RMSDATETIME = RMS_DATE;
     await existingData.save();
     res.json({ success: true, message: C_APP_STATUS });
